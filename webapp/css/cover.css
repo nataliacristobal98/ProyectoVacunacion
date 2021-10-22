@@ -1,0 +1,112 @@
+/*
+ * Globals
+ */
+
+/*Colores: #F53F3F -> Rojo     #70BFF5 -> Azul*/
+
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: rgb(0, 0, 0);
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: rgb(255, 255, 255);
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #1495ee;
+  border: .05rem solid #104d79;
+}
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 .05rem .1rem rgba(255, 255, 255, 0.5);
+}
+
+p{
+  text-align: left;
+}
+
+li{
+  text-align: left;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+/*
+ * Header
+ */
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: #F53F3F;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: #F53F3F;
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: rgb(0, 0, 0);
+  border-bottom-color: rgb(0, 0, 0);
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+div.cuadro{
+  text-align: center;
+  padding: 28px 27px;
+  background-color: rgb(227, 227, 227);
+  color: rgb(0, 0, 0);
+  inset: auto auto 30px auto;
+  width: 282px;
+  max-height: 836px;
+  overflow: auto;
+  position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 10px;
+  box-sizing: border-box;
+  display: block;
+}
+
+
+

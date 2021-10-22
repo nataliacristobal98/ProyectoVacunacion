@@ -1,0 +1,73 @@
+<!doctype html>
+<!-- Esta pantalla emplea AJAX, sirve para el calculo de la segunda dosis-->
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vacunación COVID - Información</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script>
+        function realizaProceso(valorCaja1){
+            var parametros = {
+                "valorCaja1" : valorCaja1
+            };
+            $.ajax({
+                data:  parametros,
+                url:   'ajaxAccion.php',
+                type:  'post',
+                success:  function (response) {
+                    $("#resultado").html(response);
+                }
+            });
+        }
+    </script>
+
+</head>
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h4 class="masthead-brand">Vacunación Comunidad de Madrid</h4>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link" href="login.php">Login</a>
+                <a class="nav-link" href="logout.php">Logout</a>
+                <a class="nav-link" href="información.html">Información</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Calculo para tu segunda dosis</h1>
+        <p class="lead">Si quieres saber cuando se te tendría que administrar su segudan dosis de la vacuna antes de mandar el formulario puede calcularlo aquí:</p>
+
+
+        <h5 class="mb-3">Fecha de vacunación:</h5>
+        <input type="date" name="caja_texto" id="valor1" min="2021-01-01" max="2029-12-31">
+
+        <input class="btn-secondary" type="button" href="javascript:;" onclick="realizaProceso($('#valor1').val());return false;" value="Calcula"/>
+        </br>
+        </br>
+        <h6 class="mb-3"><span id="resultado">Su segunda dosis sería...</span></h6>
+
+        </br>
+        <p style="text-align: center">Para pedir su cita de vacunación pulse en el siguiente botón:</p>
+        <div class="col">
+            <a href="login.php" id="boton" class="btn btn-lg btn-block btn-secondary" type="submit">Pide tu cita</a>
+        </div>
+    </main>
+    </br>
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p style="text-align: center">Registro de Vacunación de la Comunidad de Madrid</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
